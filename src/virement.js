@@ -19,7 +19,7 @@ export default class Virement extends React.Component {
         if(this.validateCompteBeneficiare(),this.validateCompteEmetteur(),this.validateMontant(),this.validateMotif()){
             this.sendRequest();
         }
-    
+
 }
 
  sendRequest =()=>{
@@ -64,7 +64,7 @@ validateMotif =()=>{
 
 
             <input name='montant'  id='montant' onChange={(event)=>{this.setState({...this.state,montant:event.target.value})}}/>
-           {this.validateMontant()? null : <p id='errorMontant'>entrez un montant supeieur à 10 et inferieur à 1000</p> }
+           {this.validateMontant()? null : <p id='errorMontant'>entrez un montant superieur à 10 et inferieur à 1000</p> }
 
 
             <input name='NoComptebeneficiare' id='NoComptebeneficiare' onChange={(event)=>{this.setState({...this.state,NoComptebeneficiare:event.target.value})}}/>
@@ -73,7 +73,6 @@ validateMotif =()=>{
 
             <input name='NoCompteEmetteur' id='NoCompteEmetteur' onChange={(event)=>{this.setState({...this.state,NoCompteEmetteur:event.target.value})}} />
             {this.validateCompteEmetteur()? null : <p id='errorNoCompteEmetteur'>entrez un compte emetteur valide</p> }
-
 
 
             <button type='submit' id='executerVirement' onClick={this.submit} >executer le virement</button>
