@@ -96,11 +96,11 @@ describe('VirementTest',()=>{
                 name: 'NoCompteEmetteur',
                 value:'111111111'
             },
-          });
+    });
         
-         expect(app.find('#errorNoCompteEmetteur').length).toEqual(1);
-        const errorMontant = app.find('#errorNoCompteEmetteur');
-        expect(errorMontant.text()).toBe('entrez un compte emetteur valide')
+    expect(app.find('#errorNoCompteEmetteur').length).toEqual(1);
+    const errorMontant = app.find('#errorNoCompteEmetteur');
+    expect(errorMontant.text()).toBe('entrez un compte emetteur valide')
 
         NoCompteEmetteurInput.simulate('change', {
             target: {

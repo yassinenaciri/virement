@@ -16,7 +16,7 @@ export default class Virement extends React.Component {
     }
 
     submit=()=>{
-        if(this.validateCompteBeneficiare(),this.validateCompteEmetteur(),this.validateMontant(),this.validateMotif()){
+        if(this.validateCompteBeneficiare() && this.validateCompteEmetteur() && this.validateMontant() && this.validateMotif()){
             this.sendRequest();
         }
 
@@ -27,18 +27,17 @@ export default class Virement extends React.Component {
 }  
 
 validateCompteBeneficiare =()=>{
- return this.validateCompte(this.state.NoComptebeneficiare);
+ return this.validateCompte(this.state.NoComptebeneficiare); 
 }
 validateCompteEmetteur =()=>{
     return this.validateCompte(this.state.NoCompteEmetteur);
    }
-
 validateCompte =(compte )=>{
     console.log(compte.length);
     if (compte.length ==16 ){
         return true;
     }
-    return false
+    return false;
 }
 
 validateMontant =( )=>{
@@ -52,7 +51,7 @@ validateMotif =()=>{
     if (this.state.motif.length >0){
         return true
     }
-    return false
+    return false;
 }
 
   render() {
